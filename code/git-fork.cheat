@@ -1,0 +1,22 @@
+% git, fork, pr
+
+# 将上游 master 变基到本地/远程 master（适合无人克隆你的仓库时）
+git fetch <remote_name>
+git checkout master
+git rebase <remote_name>/master
+git fetch --unshallow origin
+git push -f origin master
+
+# 将上游 master 合并到本地/远程 master（适合有人克隆你的仓库时）
+git fetch <remote_name>
+git checkout master
+git merge <remote_name>/master
+git fetch --unshallow origin
+git push -f origin master
+
+# 查看用户在 GitHub 上所有开放的 PR
+navi fn url::open 'https://github.com/pulls?&q=author:<user>+is:open+is:pr'
+
+# 从 fork 检出 PR 分支
+git fetch origin pull/<pr_number>/head:pr/<pr_number> \
+   && git checkout pr/<pr_number>

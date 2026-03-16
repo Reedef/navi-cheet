@@ -1,0 +1,39 @@
+% docker, buildx
+
+# 列出所有 buildx 构建器
+docker buildx ls
+
+# 创建一个新的 buildx 构建器（支持多平台）
+docker buildx create --name <builder_name> --driver docker-container --use
+
+# 使用当前构建器
+docker buildx use <builder_name>
+
+# 启动构建器
+docker buildx inspect --bootstrap
+
+# 构建多平台镜像并推送到仓库
+docker buildx build --platform linux/amd64,linux/arm64 -t <image>:<version> --push .
+
+# 构建多平台镜像并导出到本地（OCI 格式）
+docker buildx build --platform linux/amd64,linux/arm64 -t <image>:<version> --output type=oci,dest=image.tar .
+
+# 构建多平台镜像并加载到本地 docker（仅支持单平台）
+docker buildx build --platform linux/amd64 -t <image>:<version> --load .
+
+# 构建并推送到多个仓库标签
+docker buildx build --platform linux/amd64,linux/arm64 -t <image>:<version> -t <image>:latest --push .
+
+# 查看 buildx 构建历史
+docker buildx du
+
+# 清理 buildx 构建缓存
+docker buildx prune
+
+# 删除构建器
+docker buildx rm <builder_name>
+
+# 查看当前构建器详情
+docker buildx inspect
+
+$ builder_name: docker buildx ls | awk 'NR>1 {print $1}' | grep -v "\*"

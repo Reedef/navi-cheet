@@ -1,0 +1,19 @@
+% brew, cask
+
+# 查看 cask 信息
+brew cask info <casks>
+
+# 安装 cask
+brew cask install <casks>
+
+# 重新安装 cask
+brew reinstall <caskinstalled>
+
+# 卸载 cask
+brew cask uninstall <caskinstalled>
+
+# 编辑 cask
+brew cask edit <casks>
+
+$ casks: brew search --casks
+$ caskinstalled: brew cask list

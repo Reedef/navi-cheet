@@ -1,0 +1,18 @@
+% curl, http
+
+# 发送 GET 请求
+curl <url>
+
+# 发送 HTTP 请求
+curl -X <method> <url>
+
+# 发送 GET 请求并跟随重定向
+curl -L <url>
+
+# 发送 GET 请求，失败时返回非零状态码
+curl --fail <url>
+
+# 发送 HTTP 请求并显示请求和响应详情
+curl -v <url>
+
+$ method: echo -e 'GET\nPOST\nPUT\nDELETE\nPATCH'

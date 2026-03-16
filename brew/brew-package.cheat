@@ -1,0 +1,34 @@
+% brew, package
+
+# 更新 brew
+brew update
+
+# 升级 brew 包
+brew upgrade
+
+# 查看包信息
+brew info <package>
+
+# 安装包
+brew install <package>
+
+# 重新安装包
+brew reinstall <package>
+
+# 卸载包
+brew uninstall <installed>
+
+# 编辑包公式
+brew edit <package>
+
+# 自动清理
+brew cleanup
+
+# 健康检查
+brew doctor
+
+# 修复权限
+sudo chown -R $(whoami):admin /usr/local
+
+$ package: brew search
+$ installed: brew list

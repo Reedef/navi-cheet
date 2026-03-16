@@ -1,0 +1,16 @@
+% git, submodule
+
+# 添加子模块
+git submodule add <repository> <path>
+
+# 初始化并更新子模块
+git submodule update --init
+
+# 更新子模块（不初始化）
+git submodule update
+
+# 拉取所有子模块更新
+git submodule foreach git pull origin master
+
+# 递归初始化并更新所有子模块
+git submodule update --init --recursive

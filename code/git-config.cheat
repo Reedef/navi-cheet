@@ -1,0 +1,19 @@
+% git, config
+
+# 设置全局用户名
+git config --global user.name <name>
+
+# 设置全局邮箱
+git config --global user.email <email>
+
+# 查看所有远程仓库
+git remote --verbose
+
+# 添加远程仓库
+git remote add <remote_name> <remote_url>
+
+# 重命名远程仓库
+git remote rename <old_remote_name> <new_remote_name>
+
+# 删除远程仓库
+git remote remove <remote_name>

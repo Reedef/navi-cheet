@@ -1,0 +1,12 @@
+% brew, link
+
+# 链接公式
+brew link <installed>
+
+# 链接时删除已存在的文件
+brew link --overwrite <installed>
+
+# 允许链接仅 keg-only 的公式
+brew link --force <installed>
+
+$ installed: brew list

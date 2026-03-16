@@ -1,0 +1,13 @@
+% osx, mac os, disk
+
+# 弹出卷
+diskutil eject '<eject_vol>'
+
+# 显示磁盘信息
+diskutil list
+
+# 显示分区信息
+diskutil info '<disk_dev>'
+
+$ disk_dev: find /dev -maxdepth 1 -name "disk*s*"
+$ eject_vol: find /Volumes ! -path /Volumes -maxdepth 1 -type d  -name "*"

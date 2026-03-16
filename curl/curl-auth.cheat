@@ -1,0 +1,6 @@
+% curl, auth
+
+# 发送带认证的 HTTP 请求
+curl -u <username>:<password> -X <method> <url>
+
+$ method: echo -e 'GET\nPOST\nPUT\nDELETE\nPATCH'

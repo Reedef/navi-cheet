@@ -1,0 +1,13 @@
+% git, push, pull
+
+# 推送提交到远程仓库
+git push -u <remote_name> <branch_name>
+
+# 推送到远程仓库并覆盖另一个分支
+git push <remote_name> <branch>:<branch_to_overwrite>
+
+# 强制推送本地分支覆盖远程分支
+git push <remote_name> <branch_name> -f
+
+# 拉取远程仓库更新（仅快进）
+git pull --ff-only

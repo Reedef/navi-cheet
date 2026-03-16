@@ -1,0 +1,31 @@
+% git, commit
+
+# 查看仓库当前状态
+git status
+
+# 查看未暂存的文件变更
+cd <toplevel_directory>; \
+    git diff <unstaged_files>
+
+# 暂存单个或多个文件
+cd <toplevel_directory>; \
+    git add <changed_files>;
+
+# 暂存所有文件
+git add -A
+
+# 提交暂存的文件
+git commit -m "<commit_description>"
+
+# 创建回溯日期的提交
+git commit --date="<number_of_days_ago> days ago" -m "<commit_description>"
+
+# 跳过 git hooks 提交
+git commit --no-verify
+
+# 对基于 master 的分支所有提交进行签名
+git rebase master -S -f
+
+$ toplevel_directory: git rev-parse --show-toplevel
+$ unstaged_files: git status --untracked-files=no -s --porcelain | awk '{print $NF}' --- --multi true
+$ changed_files: git status --untracked-files=all -s --porcelain | awk '{print $NF}' --- --multi true

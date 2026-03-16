@@ -1,0 +1,24 @@
+% docker, container
+
+# 列出运行中的容器
+docker ps
+
+# 停止运行中的容器（SIGTERM）
+docker stop <container_id>
+
+# 强制停止运行中的容器（SIGKILL）
+docker kill <container_id>
+
+# 删除所有运行中和已停止的容器
+docker rm -f $(docker ps -aq)
+
+# 在容器内创建新的 bash 进程并连接终端
+docker exec -it <container_id> bash
+
+# 查看容器日志最后 100 行
+docker logs --tail 100 <container_id> | less
+
+# 查看容器日志最后 100 行并持续跟踪
+docker logs --tail 100 <container_id> -f
+
+$ container_id: docker ps --- --headers 1 --column 1

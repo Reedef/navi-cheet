@@ -1,0 +1,4 @@
+% osx, mac os, system
+
+# 锁定系统（立即进入睡眠）
+pmset displaysleepnow

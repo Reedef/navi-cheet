@@ -1,0 +1,7 @@
+% git, misc
+
+# 初始化 git 仓库
+git init
+
+# 清除所有未跟踪文件和变更
+git clean -dxf

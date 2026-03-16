@@ -1,0 +1,9 @@
+% osx, mac os, file
+
+# 复制文件/目录到目标路径，并移除所有目标文件的 `@` 扩展属性
+cp -RX <file_or_dir> <target_path>
+
+# 移除文件/目录的 `@` 扩展属性
+xattr -rc <file_or_dir>
+
+$ file_or_dir: ls

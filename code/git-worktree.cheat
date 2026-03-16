@@ -1,0 +1,36 @@
+% git, worktree
+
+# 列出所有 worktree
+git worktree list
+
+# 创建新 worktree 并新建分支
+git worktree add <path> -b <new_branch>
+
+# 从已有分支创建 worktree
+git worktree add <path> <existing_branch>
+
+# 从当前 HEAD 创建 worktree（分离头指针）
+git worktree add --detach <path>
+
+# 移除 worktree（不干净会失败）
+git worktree remove <worktree_path>
+
+# 强制移除 worktree（即使不干净）
+git worktree remove -f <worktree_path>
+
+# 移除 worktree 并删除分支
+git worktree remove -f -B <worktree_path> <branch>
+
+# 清理失效的 worktree 管理文件
+git worktree prune
+
+# 锁定 worktree（防止被移除）
+git worktree lock <worktree_path>
+
+# 解锁 worktree
+git worktree unlock <worktree_path>
+
+# 移动 worktree 到新位置
+git worktree move <old_path> <new_path>
+
+$ worktree_path: git worktree list | awk '{print $1}' | grep -v "$(git rev-parse --show-toplevel)" --- --multi true

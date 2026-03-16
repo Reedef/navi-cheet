@@ -1,0 +1,32 @@
+% docker, image
+
+# 列出本地所有镜像
+docker images
+
+# 从仓库拉取镜像
+docker pull <image>:<version>
+
+# 从当前目录 Dockerfile 构建镜像并打标签
+docker build -t <image>:<version> .
+
+# 删除镜像
+docker image rm <image_id>
+
+# 从本地镜像库删除镜像
+docker rmi <image_id>
+
+# 清理悬空镜像（none/dangling）
+docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+
+# 强制清理悬空镜像
+docker rmi $(docker images --filter "dangling=true" -q --no-trunc) -f
+
+# 重命名镜像（打新标签）
+docker tag <image_id> <new_image_name>:<new_version>
+
+# 删除旧标签（保留镜像）
+docker rmi <old_image_name>:<old_version>
+
+$ image_id: docker images --- --headers 1 --column 3
+$ old_image_name: docker images --- --headers 1 --column 1
+$ old_version: docker images --- --headers 1 --column 2

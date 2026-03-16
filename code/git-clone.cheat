@@ -1,0 +1,7 @@
+% git, clone
+
+# 克隆仓库
+git clone -b <branch_name> <repository> <clone_directory>
+
+# 浅克隆（深度1，包含所有分支和子模块）
+git clone --depth=1 --no-single-branch --recurse-submodules <repository> <clone_directory>
