@@ -1,0 +1,6 @@
+% json
+
+# JSON 转 YAML
+cat <json_file> | ruby -ryaml -rjson -e 'puts YAML.dump(JSON.load(ARGF))'
+
+$ json_file: find . -name '*.json'

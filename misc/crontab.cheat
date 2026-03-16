@@ -1,0 +1,7 @@
+% crontab, schedule
+
+# 列出定时任务
+crontab -l
+
+# 编辑定时任务
+crontab -e

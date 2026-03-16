@@ -1,0 +1,7 @@
+% ssh
+
+# 启动 ssh agent
+ssh-agent -s
+
+# 添加私钥到 ssh agent
+ssh-add

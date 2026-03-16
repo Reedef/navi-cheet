@@ -1,0 +1,4 @@
+% qr code
+
+# 创建二维码
+echo <content> | curl -F-=<- qrenco.de
